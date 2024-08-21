@@ -19,8 +19,8 @@ export class TokenService {
     return localStorage.getItem(REFRESH_TOKEN);
   }
 
-  saveToken(token: string): void{
-    localStorage.setItem(ACCESS_TOKEN, token);
+  saveToken(token?: string): void{
+    token ? localStorage.setItem(ACCESS_TOKEN, token) : localStorage.setItem(ACCESS_TOKEN, '')
   }
 
   saveRefreshToken(refreshToken: string): void{
