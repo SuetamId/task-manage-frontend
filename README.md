@@ -1,27 +1,42 @@
-# TaskManageFrontend
+# Task Manage Frontend
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.8.
+Este projeto foi desenvolvido para o gerenciamento de tarefas, aplicando conhecimentos em Angular (17) com Tailwind CSS.
 
-## Development server
+## Stack Utilizada
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- **Angular 17**: Framework principal para desenvolvimento do frontend.
+- **TypeScript**: Linguagem utilizada para programação no Angular.
+- **Tailwind CSS**: Framework de CSS para estilização.
+- **RxJS**: Biblioteca para programação reativa.
+- **Angular CLI**: Ferramenta de linha de comando para gerenciar e construir projetos Angular.
+- **Karma**: Ferramenta para execução de testes unitários.
+- **Jasmine**: Framework de testes para Angular.
+- **Git**: Controle de versão.
+- **Visual Studio Code**: IDE utilizada para o desenvolvimento.
+- **Swagger**: Documentação da API backend.
 
-## Code scaffolding
+## Servidor de Desenvolvimento
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Execute `ng serve` para iniciar o servidor de desenvolvimento. Navegue até `http://localhost:4200/`. A aplicação será recarregada automaticamente se você alterar qualquer um dos arquivos de origem.
 
 ## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Execute `ng build` para construir o projeto. Os artefatos de build serão armazenados no diretório `dist/`.
 
-## Running unit tests
+## Testes Unitários
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Execute `ng test` para executar os testes unitários através do [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
+## Ajuda Adicional
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Para obter mais ajuda sobre o Angular CLI, use `ng help` ou consulte a [Visão Geral e Referência de Comandos do Angular CLI](https://angular.io/cli).
 
-## Further help
+## Autor
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- [@SuetamId](https://github.com/SuetamId)
+
+## Relacionados
+
+Backend Spring Boot
+
+[Backend Docs](https://github.com/SuetamId/task-manage-backend)
