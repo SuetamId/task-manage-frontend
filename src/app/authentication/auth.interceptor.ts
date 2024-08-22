@@ -8,6 +8,9 @@ export class AuthInterceptor implements HttpInterceptor {
   constructor(private tokenService: TokenService) {}
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+    if (req.url.includes('/login')) {
+      return next.handle(req);
+    }
     const token = this.tokenService.getToken();
     if (token) {
       const cloned = req.clone({
@@ -15,6 +18,7 @@ export class AuthInterceptor implements HttpInterceptor {
       });
       return next.handle(cloned);
     }
+
     return next.handle(req);
   }
 }
