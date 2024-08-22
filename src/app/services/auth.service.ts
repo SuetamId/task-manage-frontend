@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { TokenService } from './token.service';
 import { Observable, tap } from 'rxjs';
 import { environment } from '../../environments/environments';
+import { User } from '../../models/user.model';
 
 @Injectable({
   providedIn: 'root'
@@ -18,6 +19,10 @@ export class AuthService {
           this.tokenService.saveToken(response.token);
         })
       );
+  }
+
+  register(user: User): Observable<User>{
+    return this.http.post<User>(`${environment.api_url_endpoint}/auth/register`, user);
   }
 
   logout(): void {

@@ -11,5 +11,9 @@ export const routes: Routes = [
     path: 'login',
     loadComponent: () => import('../app/pages/login/login.component').then(c => c.LoginComponent),
   },
+  {
+    path: 'register',
+    loadComponent: () => import('../app/pages/register/register.component').then(c => c.RegisterComponent),
+  },
   { path: '**', redirectTo: 'home' }
 ];
