@@ -3,12 +3,14 @@
   <div class="flex items-center gap-8 p-6 sm:items-start lg:items-center">
     <div class="min-w-0 flex-1 gap-14 xl:flex xl:items-center">
       <div class="min-w-0 max-w-xl flex-1 gap-6 sm:flex sm:items-center">
-        <div class="mb-4 flex aspect-square h-14 w-14 shrink-0 items-center sm:mb-0">
+        <div class="flex aspect-square h-14 w-[100px] shrink-0 items-center sm:mb-0">
           <span [ngClass]="{
-            'bg-blue-100 text-blue-800': task.status === 'TODO',
-            'bg-yellow-100 text-yellow-800': task.status === 'IN_PROGRESS',
-            'bg-green-100 text-green-800': task.status !== 'TODO' && task.status !== 'IN_PROGRESS'
-          }" class="text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300">
+            'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-300': task.status === 'TODO',
+            'bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-300': task.status === 'IN_PROGRESS',
+            'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300': task.status === 'DONE',
+            'bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-300': task.status === 'CANCELLED'
+          }"
+          class="text-xs font-medium me-5 px-2.5 py-0.5 rounded ">
             {{ task.status }}
           </span> </div>
         <div>
@@ -20,8 +22,8 @@
     <div class="mt-4 flex shrink-0 flex-col gap-2 sm:flex-row sm:justify-between md:items-center xl:mt-0 xl:flex-col xl:items-start">
       <dl class="flex items-center gap-2.5">
         <dd class="text-base font-normal text-gray-500 dark:text-gray-400">
-          <button type="button" class="text-red-700 hover:text-white border border-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 dark:border-gray-700 dark:text-black dark:hover:text-white dark:hover:bg-black dark:focus:ring-gray-900">Ver tarefa</button>
-          <button type="button" class="text-red-700 hover:text-white border border-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 dark:border-red-500 dark:text-red dark:hover:text-red dark:hover:bg-red-600 dark:focus:ring-red-900">Excluir</button>
+          <button (click)="openTaskModal(task)"  type="button" class="text-red-700 hover:text-white border border-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 dark:border-gray-700 dark:text-black dark:hover:text-white dark:hover:bg-black dark:focus:ring-gray-900">Ver tarefa</button>
+          <button (click)="openDeleteModal(task)" type="button" class="text-red-700 hover:text-white border border-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 dark:border-red-500 dark:text-red dark:hover:text-red dark:hover:bg-red-600 dark:focus:ring-red-900">Excluir</button>
         </dd>
       </dl>
     </div>
